@@ -53,4 +53,10 @@ public final class ContactController {
         private String name;
         private String phone;
     }
+
+    private static MyRunnable implements Runnable {
+        public void run() {
+            System.out.println("running");
+        }
+    }
 }
