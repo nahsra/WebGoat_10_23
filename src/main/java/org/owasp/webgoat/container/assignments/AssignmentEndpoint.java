@@ -32,12 +32,14 @@ import org.owasp.webgoat.container.session.UserSessionData;
 import org.owasp.webgoat.container.session.WebSession;
 import org.owasp.webgoat.container.users.WebGoatUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public abstract class AssignmentEndpoint implements Initializeable {
 
   @Autowired private WebSession webSession;
   @Autowired private UserSessionData userSessionData;
-  @Getter @Autowired private PluginMessages messages;
+  @Getter @Autowired @Qualifier("mensajes")
+  private PluginMessages messages;
 
   protected WebSession getWebSession() {
     return webSession;
