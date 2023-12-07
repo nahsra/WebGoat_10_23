@@ -36,10 +36,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 public abstract class AssignmentEndpoint implements Initializeable {
 
-  @Autowired private WebSession webSession;
+  private WebSession webSession;
   @Autowired private UserSessionData userSessionData;
   @Getter @Autowired @Qualifier("mensajes")
   private PluginMessages messages;
+
+  @Autowired
+  public AssignmentEndpoint(WebSession webSession){
+    this.webSession = webSession;
+  }
 
   protected WebSession getWebSession() {
     return webSession;
