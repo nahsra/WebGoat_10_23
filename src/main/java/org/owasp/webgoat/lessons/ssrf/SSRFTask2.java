@@ -69,4 +69,24 @@ public class SSRFTask2 extends AssignmentEndpoint {
   private AttackResult getFailedResult(String errorMsg) {
     return failed(this).feedback("ssrf.failure").output(errorMsg).build();
   }
+
+  public void print(){
+      boolean success = process(new MyClass());
+
+      System.out.println("hola");
+      return ;
+  }
+
+  private boolean process(MyClass myClass){
+      if(myClass == null){
+          return false;
+      }
+
+      myClass.a = 10;
+      return true;
+  }
+
+  private static class MyClass{
+      int a =  0 ;
+  }
 }
