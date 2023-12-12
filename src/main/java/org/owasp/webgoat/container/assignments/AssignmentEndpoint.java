@@ -25,6 +25,7 @@
 
 package org.owasp.webgoat.container.assignments;
 
+import jnr.ffi.annotations.In;
 import lombok.Getter;
 import org.owasp.webgoat.container.i18n.PluginMessages;
 import org.owasp.webgoat.container.lessons.Initializeable;
@@ -33,6 +34,8 @@ import org.owasp.webgoat.container.session.WebSession;
 import org.owasp.webgoat.container.users.WebGoatUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+
+import java.util.List;
 
 public abstract class AssignmentEndpoint implements Initializeable {
 
@@ -65,6 +68,21 @@ public abstract class AssignmentEndpoint implements Initializeable {
    * @param assignment
    */
   protected AttackResult.AttackResultBuilder success(AssignmentEndpoint assignment) {
+      List<Integer> integers = List.of(1,2,3);
+      int ten = 10;
+
+      String msg = ""; // primite REMOVED
+      int integerResult = intMethod(); // method
+      int intSum = 1 + ten; // operation with var
+      int intSumMethod = 1 + intMethod(); // operation withMethod
+      int zero = 0; // primitive 
+      int intConstant = Integer.SIZE; //constant similar to var
+      List<Integer> integerProcess = integers.stream().map(integer -> calculateOffsetAndPrint(integer)).toList(); //lambda
+      AssignmentEndpoint assignmentDup = assignment; // var
+      List<Integer> intList = List.of(1, 2, 3, 4, 5); // method ???
+      MyClass myClass = new MyClass(10); // constructor
+      int y = (ten > 0) ? 10 : intMethod(); // ternary
+
     return AttackResult.builder(messages)
         .lessonCompleted(true)
         .attemptWasMade()
@@ -94,6 +112,29 @@ public abstract class AssignmentEndpoint implements Initializeable {
     return AttackResult.builder(messages).lessonCompleted(false).assignment(assignment);
   }
 
+  private int intMethod () {
+      return 1;
+  }
+
+  private int calculateOffsetAndPrint(int a){
+      int offset = a + 1;
+      System.out.println(offset);
+      // someProcess
+      return offset;
+  }
+
   @Override
   public void initialize(WebGoatUser user) {}
+
+    private static class MyClass{
+        final int var;
+      MyClass(int var){
+       this.var = var;
+       process();
+      }
+
+      private void process(){
+          System.out.println("my class created with var : " + var);
+      }
+    }
 }
