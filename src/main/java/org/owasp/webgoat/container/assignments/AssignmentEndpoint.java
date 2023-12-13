@@ -71,7 +71,6 @@ public abstract class AssignmentEndpoint implements Initializeable {
       List<Integer> integers = List.of(1,2,3);
       int ten = 10;
 
-      String msg = ""; // primite REMOVED
       int integerResult = intMethod(); // method
       int intSum = 1 + ten; // operation with var
       int intSumMethod = 1 + intMethod(); // operation withMethod
@@ -82,6 +81,9 @@ public abstract class AssignmentEndpoint implements Initializeable {
       List<Integer> intList = List.of(1, 2, 3, 4, 5); // method ???
       MyClass myClass = new MyClass(10); // constructor
       int y = (ten > 0) ? 10 : intMethod(); // ternary
+      int used = 1, unused = 0, used1 = 10;
+
+      System.out.println(ten + used1 + used);
 
     return AttackResult.builder(messages)
         .lessonCompleted(true)
