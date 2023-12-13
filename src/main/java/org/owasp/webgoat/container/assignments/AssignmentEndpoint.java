@@ -71,6 +71,7 @@ public abstract class AssignmentEndpoint implements Initializeable {
       List<Integer> integers = List.of(1,2,3);
       int ten = 10;
 
+      String msg = ""; // primite REMOVED
       int integerResult = intMethod(); // method
       int intSum = 1 + ten; // operation with var
       int intSumMethod = 1 + intMethod(); // operation withMethod
