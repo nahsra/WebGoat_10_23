@@ -94,6 +94,7 @@ public class AccountVerificationHelper {
 
     unusedSuccess(true, 1);
     unusedFailsOverload(1,2,3);
+    unusedFailsOverload(1, 2);
 
     // else
     return true;
