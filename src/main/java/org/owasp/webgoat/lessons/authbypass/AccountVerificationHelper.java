@@ -111,4 +111,8 @@ public class AccountVerificationHelper {
   private void unusedFailsOverload(Integer a, Integer b){
       unusedFailsOverload(a, b, null);
   }
+
+  private void unusedMethod(){
+      System.out.println("I'm unused :(");
+  }
 }
