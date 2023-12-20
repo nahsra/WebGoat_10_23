@@ -50,6 +50,7 @@ public class AttackResult {
     public AttackResultBuilder lessonCompleted(boolean lessonCompleted) {
       this.lessonCompleted = lessonCompleted;
       this.feedbackResourceBundleKey = "lesson.completed";
+      //System.out.println("hola");
       // return 0;
       return this;
     }
@@ -69,6 +70,11 @@ public class AttackResult {
       this.feedbackResourceBundleKey = resourceBundleKey;
       return this;
     }
+
+      /*public AttackResultBuilder feedback(String resourceBundleKey) {
+          this.feedbackResourceBundleKey = resourceBundleKey;
+          return this;
+      }*/
 
     public AttackResultBuilder output(String output) {
       this.output = output;
