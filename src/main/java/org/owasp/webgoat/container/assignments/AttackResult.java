@@ -50,12 +50,13 @@ public class AttackResult {
     public AttackResultBuilder lessonCompleted(boolean lessonCompleted) {
       this.lessonCompleted = lessonCompleted;
       this.feedbackResourceBundleKey = "lesson.completed";
+      // return 0;
       return this;
     }
 
     public AttackResultBuilder lessonCompleted(boolean lessonCompleted, String resourceBundleKey) {
-      this.lessonCompleted = lessonCompleted;
-      this.feedbackResourceBundleKey = resourceBundleKey;
+      /*this.lessonCompleted = lessonCompleted;
+      this.feedbackResourceBundleKey = resourceBundleKey;*/
       return this;
     }
 
@@ -104,6 +105,7 @@ public class AttackResult {
   @Getter private String output;
   @Getter private final String assignment;
   @Getter private boolean attemptWasMade;
+  //@Getter private boolean comment;
 
   public AttackResult(
       boolean lessonCompleted,
