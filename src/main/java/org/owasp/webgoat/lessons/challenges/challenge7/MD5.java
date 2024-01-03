@@ -96,6 +96,7 @@ public class MD5 {
    * @since ostermillerutils 1.00.00
    */
   public static byte[] getHash(byte[] b) {
+      byte[] a [][] ;
     MD5 md5 = new MD5();
     md5.update(b);
     return md5.getHash();
