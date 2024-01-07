@@ -29,14 +29,16 @@ jobs:
       if: ${{ github.event_name == 'pull_request' }}
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
+      uses: github/codeql-action/init@v1
       with:
-         languages: java
-    - run: |
-       mvn clean install -DskipTests
-     
+        languages: "java"
+
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v1
+
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      uses: github/codeql-action/analyze@v1
+
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v2
       with:
