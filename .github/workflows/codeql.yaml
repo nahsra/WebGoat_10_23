@@ -3,7 +3,7 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ "**" ]
 
 jobs:
   analyse:
