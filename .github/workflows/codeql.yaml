@@ -25,7 +25,6 @@ jobs:
       with:
         java-version: 17
 
-    - run: git checkout HEAD^2
     - name: Set up JDK ${{ matrix.java-version }}
       uses: actions/setup-java@v3
       with:
