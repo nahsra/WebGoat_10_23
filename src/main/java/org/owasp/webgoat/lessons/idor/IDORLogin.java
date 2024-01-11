@@ -40,6 +40,8 @@ public class IDORLogin extends AssignmentEndpoint {
 
   private Map<String, Map<String, String>> idorUserInfo = new HashMap<>();
 
+  private static final String password = "collision and snake case";
+
   public void initIDORInfo() {
 
     idorUserInfo.put("tom", new HashMap<String, String>());
